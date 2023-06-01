@@ -37,7 +37,7 @@ class MembersView
         $tpl = new Template("templates/index.html");
 
         $tpl->replace("DATA_HEADER", $header);
-        $tpl->replace("DATA_LINK", "form.php");
+        $tpl->replace("DATA_LINK_FORM", "index.php?AddForm=true");
         $tpl->replace("DATA_TITLE", "Member");
         $tpl->replace("DATA_TABLE", $dataMember);
         $tpl->write();
