@@ -5,7 +5,7 @@
             $no = 1;
             $dataProgram = null;
 
-            foreach($data['program'] as $val){
+            foreach($data as $val){
               list($id_program, $jenis_program, $tgl_pelaksanaan) = $val;
             
                 $dataProgram .= "<tr>
@@ -27,7 +27,7 @@
                 </tr>";
       
             $tpl = new Template("templates/index.html");
-            $tpl->replace("DATA_TABEL", $dataAuthor);
+            $tpl->replace("DATA_TABEL", $dataProgram);
             $tpl->replace("DATA_TITLE", "Program");
             $tpl->replace("DATA_HEADER", $header);
             $tpl->replace("DATA_LINK_FORM", "program.php?Add=true");

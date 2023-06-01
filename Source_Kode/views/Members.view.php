@@ -73,7 +73,7 @@ class MembersView
 
 
         $tpl = new Template("templates/form.html");
-        $tpl->replace("DATA_LINK", "form.php");
+        $tpl->replace("DATA_LINK", "index.php");
         $tpl->replace("DATA_TITLE", "Tambah Member");
         $tpl->replace("DATA_FORM", $dataForm);
         $tpl->write();
@@ -112,7 +112,7 @@ class MembersView
             <button type="submit" class="btn btn-info text-white" name="btn-update" id="btn-submit">Submit</button>';
 
         $tpl = new Template("templates/form.html");
-        $tpl->replace("DATA_LINK", "form.php");
+        $tpl->replace("DATA_LINK", "index.php");
         $tpl->replace("DATA_TITLE", "Update Member");
         $tpl->replace("DATA_FORM", $dataForm);
         $tpl->write();
