@@ -19,14 +19,22 @@
                         </td>
                         </tr>";
             }
+            $header = "<tr>
+                <th> No </th>
+                <th> Jenis Kegiatan </th>
+                <th> Tanggal Pelaksanaan </th>
+                <th> Aksi </th>
+                </tr>";
       
             $tpl = new Template("templates/index.html");
             $tpl->replace("DATA_TABEL", $dataAuthor);
             $tpl->replace("DATA_TITLE", "Program");
+            $tpl->replace("DATA_HEADER", $header);
+            $tpl->replace("DATA_LINK_FORM", "program.php?Add=true");
             $tpl->write();
         }
 
-        public function Add()
+        public function AddForm()
         {
             $dataForm = null;
             $dataForm .= '<label for="jenis_program">Jenis Program:</label>
@@ -44,7 +52,7 @@
             $tpl->write();
         }
 
-        public function Update($dataGroup)
+        public function UpdateForm($dataProgram)
         {
             // render form
             $dataForm = null;
