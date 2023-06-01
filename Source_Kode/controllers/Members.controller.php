@@ -7,12 +7,12 @@ include_once("views/Members.view.php");
 class MembersController
 {
     private $member;
-    private $group;
+    private $program;
 
     function __construct()
     {
-        $this->member = new Members(Config::$db_host, Config::$db_user, Config::$db_pass, Config::$db_name);
-        $this->group = new Group(Config::$db_host, Config::$db_user, Config::$db_pass, Config::$db_name);
+        $this->member = new Members(Connection::$db_host, Connection::$db_user, Connection::$db_pass, Connection::$db_name);
+        $this->program = new Program(Connection::$db_host, Connection::$db_user, Connection::$db_pass, Connection::$db_name);
     }
 
     public function index()
@@ -26,7 +26,7 @@ class MembersController
         }
         $this->member->close();
         
-        $view = new MemberView();
+        $view = new MembersView();
         $view->render($data);
     }
 

@@ -9,7 +9,7 @@ class ProgramController
 
     function __construct()
     {
-        $this->program = new Program(Config::$db_host, Config::$db_user, Config::$db_pass, Config::$db_name);
+        $this->program = new Program(Connection::$db_host, Connection::$db_user, Connection::$db_pass, Connection::$db_name);
     }
 
     public function index()
